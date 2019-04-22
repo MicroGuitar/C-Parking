@@ -1,0 +1,813 @@
+#include"svga.h"
+#include<stdlib.h>
+#include<conio.h>
+#include<dos.h>
+#define v 3//基础贴图位移量
+#define h1 98//1,5车位y坐标
+#define h2 186//2,6车位y坐标
+#define h3 274//3,7车位y坐标
+#define h4 362//4,8车位y坐标
+#define h5 435//4,8车位y坐标
+#define v1 7//小型车速度 越小越快
+#define v2 27//大型车速度 越小越快
+#define v3 57//特种车速度 越小越快
+void move1(int k)//自动引导至车位1
+{
+	int i;
+	int save[9000];
+	SVGA_SaveSpeArea(375,277,46,100,save);
+	if(0==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<294;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,104,196,234,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,86,46,100,save);
+		for(i=v;i<40;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(253-i,h1,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h1,100,46,save);
+			SVGA_PartBmp(259,297,252,326,253-v-i,h1,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(1==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<294;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,130,27,73,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,86,46,100,save);
+		for(i=v;i<40;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(253-i,h1,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h1,100,46,save);
+			SVGA_PartBmp(255,301,28,127,253-v-i,h1,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(2==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<294;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,129,110,145,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,86,46,100,save);
+		for(i=v;i<40;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(253-i,h1,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h1,100,46,save);
+			SVGA_PartBmp(261,296,137,236,253-v-i,h1,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+}
+
+
+
+void move2(int k)//自动引导至车位2
+{
+	int i;
+	int save[9000];
+	SVGA_SaveSpeArea(375,277,46,100,save);
+	if(0==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<206;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,104,196,234,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,173,46,100,save);
+		for(i=v;i<40;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(253-i,h2,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h2,100,46,save);
+			SVGA_PartBmp(259,297,252,326,253-v-i,h2,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(1==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<206;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,130,27,73,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,173,46,100,save);
+		for(i=v;i<40;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(253-i,h2,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h2,100,46,save);
+			SVGA_PartBmp(255,301,28,127,253-v-i,h2,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(2==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<206;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,129,110,145,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,173,46,100,save);
+		for(i=v;i<40;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(253-i,h2,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h2,100,46,save);
+			SVGA_PartBmp(261,296,137,236,253-v-i,h2,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+}
+
+
+void move3(int k)//自动引导至车位3
+{
+	int i;
+	int save[9000];
+	SVGA_SaveSpeArea(375,277,46,100,save);
+	if(k==0)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<118;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,104,196,234,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,260,46,100,save);
+		for(i=v;i<40;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(253-i,h3,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h3,100,46,save);
+			SVGA_PartBmp(259,297,252,326,253-v-i,h3,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(1==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<118;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,130,27,73,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,260,46,100,save);
+		for(i=v;i<40;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(253-i,h3,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h3,100,46,save);
+			SVGA_PartBmp(255,301,28,127,253-v-i,h3,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(k==2)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<118;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,129,110,145,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,260,46,100,save);
+		for(i=v;i<40;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(253-i,h3,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h3,100,46,save);
+			SVGA_PartBmp(261,296,137,236,253-v-i,h3,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+}
+
+void move4(int k)//自动引导至车位4
+{
+	int i;
+	int save[9000];
+	SVGA_SaveSpeArea(375,277,46,100,save);
+	if(0==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<20;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,104,196,234,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,359,46,100,save);
+		for(i=v;i<40;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(253-i,h4,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h4,100,46,save);
+			SVGA_PartBmp(259,297,252,326,253-v-i,h4,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(1==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<20;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,130,27,73,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,359,46,100,save);
+		for(i=v;i<40;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(253-i,h4,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h4,100,46,save);
+			SVGA_PartBmp(255,301,28,127,253-v-i,h4,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(2==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<20;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,129,110,145,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,359,46,100,save);
+		for(i=v;i<40;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(253-i,h4,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h4,100,46,save);
+			SVGA_PartBmp(261,296,137,236,253-v-i,h4,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}	
+}
+
+
+void move5(int k)//自动引导至车位5
+{
+	int i;
+	int save[9000];
+	SVGA_SaveSpeArea(375,277,46,100,save);
+	if(0==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<294;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,104,196,234,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,86,46,100,save);
+		for(i=v+190;i<230;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(253+i,h1,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h1,100,46,save);
+			SVGA_PartBmp(184,222,252,326,253+v+i,h1,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(1==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<294;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,130,27,73,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,86,46,100,save);
+		for(i=v+190;i<230;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(253+i,h1,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h1,100,46,save);
+			SVGA_PartBmp(180,226,28,127,253+v+i,h1,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(2==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<294;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,129,110,145,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,86,46,100,save);
+		for(i=v+190;i<230;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(253+i,h1,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h1,100,46,save);
+			SVGA_PartBmp(185,220,137,236,253+v+i,h1,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+}
+
+
+
+
+
+void move6(int k)//自动引导至车位6
+{
+	int i;
+	int save[9000];
+	SVGA_SaveSpeArea(375,277,46,100,save);
+	if(0==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);		
+		for(i=v;i<206;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,104,196,234,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,173,46,100,save);
+		for(i=v+190;i<230;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(253+i,h2,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h2,100,46,save);
+			SVGA_PartBmp(184,222,252,326,253+v+i,h2,"sm\\che.bmp");
+			i+=v;
+		}	
+		delay(300);
+	}
+	if(1==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<206;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,130,27,73,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,173,46,100,save);
+		for(i=v+190;i<230;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(253+i,h2,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h2,100,46,save);
+			SVGA_PartBmp(180,226,28,127,253+v+i,h2,"sm\\che.bmp");
+			i+=v;
+		}	
+		delay(300);
+	}
+	if(2==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<206;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,129,110,145,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,173,46,100,save);
+		for(i=v+190;i<230;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(253+i,h2,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h2,100,46,save);
+			SVGA_PartBmp(185,220,137,236,253+v+i,h2,"sm\\che.bmp");
+			i+=v;
+		}	
+		delay(300);
+	}
+}
+
+
+
+void move7(int k)//自动引导至车位7
+{
+	int i;
+	int save[9000];
+	SVGA_SaveSpeArea(375,277,46,100,save);
+	if(k==0)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<118;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,104,196,234,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,260,46,100,save);
+		for(i=v+190;i<230;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(253+i,h3,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h3,100,46,save);
+			SVGA_PartBmp(184,222,252,326,253+v+i,h3,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(1==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<118;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,130,27,73,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,260,46,100,save);
+		for(i=v+190;i<230;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(253+i,h3,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h3,100,46,save);
+			SVGA_PartBmp(180,226,28,127,253+v+i,h3,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(2==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<118;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,129,110,145,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,260,46,100,save);
+		for(i=v+190;i<230;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(253+i,h3,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h3,100,46,save);
+			SVGA_PartBmp(185,220,137,236,253+v+i,h3,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+}
+
+
+
+void move8(int k)//自动引导至车位8
+{
+	int i;
+	int save[9000];
+	SVGA_SaveSpeArea(375,277,46,100,save);
+	if(0==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<20;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,104,196,234,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,359,46,100,save);
+		for(i=v+190;i<230;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(253+i,h4,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h4,100,46,save);
+			SVGA_PartBmp(184,222,252,326,253+v+i,h4,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(1==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<20;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,130,27,73,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,359,46,100,save);
+		for(i=v+190;i<230;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(253+i,h4,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h4,100,46,save);
+			SVGA_PartBmp(180,226,28,127,253+v+i,h4,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(2==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<20;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(375,380-i,46,100,save);
+			SVGA_SaveSpeArea(375,380-v-i,46,100,save);
+			SVGA_PartBmp(30,129,110,145,375,380-v-i,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(100);
+		SVGA_RestoreSpeArea(375,359,46,100,save);
+		for(i=v+190;i<230;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(253+i,h4,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h4,100,46,save);
+			SVGA_PartBmp(185,220,137,236,253+v+i,h4,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}	
+}
+
+
+void move9(int k)//自动引导上楼
+{
+	int i;
+	int save[9000];
+	SVGA_SaveSpeArea(375,277,46,100,save);
+	if(0==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v+190;i<290;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(253+i,h5,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h5,100,46,save);
+			SVGA_PartBmp(184,222,252,326,253+v+i,h5,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(1==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v+190;i<250;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(253+i,h5,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h5,100,46,save);
+			SVGA_PartBmp(181,226,28,127,253+v+i,h5,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(2==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v+190;i<250;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(253+i,h5,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h5,100,46,save);
+			SVGA_PartBmp(185,219,137,236,253+v+i,h5,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}	
+}
+
+
+void move10(int k)//自动引导下楼
+{
+	int i;
+	int save[9000];
+	SVGA_SaveSpeArea(375,277,46,100,save);
+	if(0==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<60;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(253-i,h5,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h5,100,46,save);
+			SVGA_PartBmp(259,297,252,326,253-v-i,h5,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(1==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<40;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(253-i,h5,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h5,100,46,save);
+			SVGA_PartBmp(256,301,28,127,253-v-i,h5,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(2==k)
+	{
+		SVGA_RestoreSpeArea(364,435,100,46,save);	
+		for(i=v;i<40;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(253-i,h5,100,46,save);
+			SVGA_SaveSpeArea(253-v-i,h5,100,46,save);
+			SVGA_PartBmp(261,296,137,236,253-v-i,h5,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}	
+}
+
+void move11(int k)//自动引导上楼之后
+{
+	int i;
+	int save[9000];
+	SVGA_SaveSpeArea(163,435,100,46,save);
+	if(0==k)
+	{
+		for(i=-90;i<110;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(253+i,h5,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h5,100,46,save);
+			SVGA_PartBmp(184,222,252,326,253+v+i,h5,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(1==k)
+	{
+		for(i=-90;i<110;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(253+i,h5,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h5,100,46,save);
+			SVGA_PartBmp(181,226,28,127,253+v+i,h5,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}
+	if(2==k)
+	{
+		for(i=-90;i<110;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(253+i,h5,100,46,save);
+			SVGA_SaveSpeArea(253+v+i,h5,100,46,save);
+			SVGA_PartBmp(185,220,137,236,253+v+i,h5,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}	
+}
+
+
+void move12(int k)//自动引导下楼之后
+{
+	int i=0;
+	int save[9000];
+	SVGA_SaveSpeArea(553,435,100,46,save);
+	if(0==k)
+	{
+		for(i=0;i<188;)
+		{
+			delay(v1);
+			SVGA_RestoreSpeArea(553-i,h5,100,46,save);
+			SVGA_SaveSpeArea(550-i,h5,100,46,save);
+			SVGA_PartBmp(259,297,252,326,550-i,h5,"sm\\che.bmp");
+			i+=3;
+		}
+		delay(300);
+	}
+	if(1==k)
+	{
+		for(i=0;i<188;)
+		{
+			delay(v2);
+			SVGA_RestoreSpeArea(553-i,h5,100,46,save);
+			SVGA_SaveSpeArea(550-i,h5,100,46,save);
+			SVGA_PartBmp(255,300,28,126,550-i,h5,"sm\\che.bmp");
+			i+=3;
+		}
+		delay(300);
+	}
+	if(2==k)
+	{
+		for(i=0;i<188;)
+		{
+			delay(v3);
+			SVGA_RestoreSpeArea(553-i,h5,100,46,save);
+			SVGA_SaveSpeArea(550-i,h5,100,46,save);
+			SVGA_PartBmp(261,296,137,236,550-i,h5,"sm\\che.bmp");
+			i+=v;
+		}
+		delay(300);
+	}	
+}

@@ -1,0 +1,8 @@
+k usernm passwd
+1 ssssss ssssss
+k usernm passwd
+k usernm passwd
+1 ssssss ssssss
+k usernm passwd
+k usernm passwd
+k usernm passwd

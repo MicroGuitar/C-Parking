@@ -1,0 +1,8 @@
+0 dddddd dddddd
+0 dddddd dddddd
+1 ssssss ssssss
+1 dddddd dddddd
+0 ssssss ssssss
+0 dddddd dddddd
+0 ssssss ssssss
+1 dddddd dddddd
